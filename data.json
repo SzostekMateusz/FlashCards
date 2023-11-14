@@ -4,11 +4,39 @@
         "answer": "Warszawa"
     },
     {
-        "question": "2 + 2",
+        "question": "Ile wynosi wynik wynik dzialania: 2 + 2?",
         "answer": "4"
     },
     {
-        "question": "Ile wynisi pierwiatek kwadratowy z 4?",
+        "question": "Ile wynosi pierwiatek kwadratowy z 4?",
         "answer": "2"
+    },
+    {
+        "question": "Kto byl pierwszym krolem Polski?",
+        "answer": "Bolesław Chrobry"
+    },
+    {
+        "question": "Ile jest plci?",
+        "answer": "2"
+    },
+    {
+        "question": "Jak nazywa sie skryptowy oraz wieloparadygmatowy jezyk programowania, stworzony przez firme Netscape",
+        "answer": "JavaScript"
+    },
+    {
+        "question": "Jaka pora roku nastepuje po zimie?",
+        "answer": "Wiosna"
+    },
+    {
+        "question": "Jaki jest najwiekszy ssak na swiecie?",
+        "answer": "Płetfal błękitny"
+    },
+    {
+        "question": "Jaki jest wzor chemiczny wody?",
+        "answer": "H2O"
+    },
+    {
+        "question": "Z jakiego kraju pochodzi firma InPost",
+        "answer": "Polska"
     }
 ]
