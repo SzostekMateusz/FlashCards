@@ -1,47 +1,45 @@
 import json
 import os 
+import tempfile
 
-print("\nWelcome to flash cards game!")
-print("\nType answer under every question. Correct answers will give you 1 point.")
-print("\nIf you need any help type ':help'. If you want to exit the game type ':quit'.\n")
-# val = input("Input data: \n")
+#Manual
 
-# if val == ":help":
-#     print("\nType answer under every question. Correct answers will give you 1 point.")
-# elif val == ":quit":
-#     print("Thanks for playing the game! See you next time!")
-# else:
-#     print("else")
-answer1 = "Mateusz"
-answer2 = "Warszawa"
+def manual():
+    print("\nWelcome to flash cards game!")
+    print("\nType answer under every question. Correct answers will give you 1 point.")
+    print("\nIf you need any help type ':help'. If you want to exit the game type ':quit'.\n")
 
+#Loading Json File
 
+question = json.load(open('data.json'))
 
-# while True:
-#     user_answer = input("What is your name: ")
-#     if user_answer == answer1:
-#         print("You guessed correcctly")
-#         score =+1
-#         print("Your score is: " + str(score))
+tf = tempfile.TemporaryFile()
 
-#     else: 
-#         print("That's wrong answer. Try again")
-#         break
-score = 0
+def game():
+    user_score = 0
+    os.system('cls')
 
-with open("data.json") as file:
-    data = json.load(file)
+    for x in range(len(question)):
+        print(f"\nQuestion number: {x+1}")
+        print("Your score: " + str(user_score))
+        print(f"{question[x].get('question')}")
+              
+        answer = input("Odpowiedź: ")
 
-i = 0
-question_counter = 0
+        if(answer == ":help"):
+            print("\nType answer under every question. Correct answers will give you 1 point.")
+        elif(answer == ":quit"):
+            print("Thanks for playing the game! See you next time!")
+            break;
+        elif(answer == question[x].get('answer')):
+            os.system('cls')
+            user_score = user_score +1
+        elif(answer !=question[x].get('answer')):
+            with tempfile.NamedTemporaryFile(mode='w') as temp_file:
+                temp_file.write("To są moje dane tymczasowe!")
+            os.system('cls')
 
-for i in data:
-    print(data[question_counter])
-    score +=1
-    question_counter +=1
-    print(score)
-    
-#       Cleaning the terminal
-#os.system("cls")
+    print(f"Your score is: {user_score}/{x} ")   
+    print(tf.print())
 
-
+game()
